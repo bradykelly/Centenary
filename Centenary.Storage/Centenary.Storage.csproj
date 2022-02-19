@@ -29,4 +29,17 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Properties\launchSettings.json" />
+      <None Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Properties\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Properties\**" />
+    </ItemGroup>
+
 </Project>

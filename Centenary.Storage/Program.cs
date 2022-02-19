@@ -4,7 +4,6 @@ using Microsoft.Extensions.Hosting;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services => { services.AddTransient<IBlobApiClient, BlobApiClient>(); })
-    .UseEnvironment("Development")
     .Build();
 
 var client = host.Services.GetRequiredService<IBlobApiClient>();
