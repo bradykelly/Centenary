@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Storage", "Centen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{9C21542A-9F4B-42CF-B684-8704A2C3FF99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Functions", "Centenary.Functions\Centenary.Functions.csproj", "{23098E52-04D7-4054-B335-F8FD1640A52A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Mail", "Centenary.Mail\Centenary.Mail.csproj", "{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{9C21542A-9F4B-42CF-B684-8704A2C3FF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C21542A-9F4B-42CF-B684-8704A2C3FF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C21542A-9F4B-42CF-B684-8704A2C3FF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23098E52-04D7-4054-B335-F8FD1640A52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23098E52-04D7-4054-B335-F8FD1640A52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23098E52-04D7-4054-B335-F8FD1640A52A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23098E52-04D7-4054-B335-F8FD1640A52A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

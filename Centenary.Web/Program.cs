@@ -1,6 +1,11 @@
+using Centenary.Mail;
+using Centenary.Mail.SendGrid;
+using Centenary.Mail.SendInBlue;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Centenary.Web.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using SendGrid;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +18,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IEmailSender, SendInBlueApiClient>();
 
 var app = builder.Build();
 
