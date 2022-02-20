@@ -1,10 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{958BD268-06FC-4F32-83B4-AAFAD9BBE19A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Storage", "Centenary.Storage\Centenary.Storage.csproj", "{65087576-371A-415F-A8E8-C840E6AE1FA8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Worker", "Centenary.Worker\Centenary.Worker.csproj", "{B55C7EDB-DC1E-4343-BCC5-73EF44902119}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,17 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{958BD268-06FC-4F32-83B4-AAFAD9BBE19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{958BD268-06FC-4F32-83B4-AAFAD9BBE19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{958BD268-06FC-4F32-83B4-AAFAD9BBE19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{958BD268-06FC-4F32-83B4-AAFAD9BBE19A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B55C7EDB-DC1E-4343-BCC5-73EF44902119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B55C7EDB-DC1E-4343-BCC5-73EF44902119}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B55C7EDB-DC1E-4343-BCC5-73EF44902119}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B55C7EDB-DC1E-4343-BCC5-73EF44902119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -17,7 +17,7 @@ public class BlobApiClient : IBlobApiClient
     {
         var retList = new List<string>();
         var blobServiceClient = GetServiceClient();
-        var containerClient = blobServiceClient.GetBlobContainerClient("pictures");
+        var containerClient = blobServiceClient.GetBlobContainerClient(_configuration["Azure:Storage:PicturesContainerName"]);
         await foreach (BlobItem blobItem in containerClient.GetBlobsAsync())
         {
             retList.Add(blobItem.Name);
