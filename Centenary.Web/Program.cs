@@ -5,6 +5,7 @@ using Centenary.Web.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -19,6 +20,11 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AuthorizePage("/Index");
 });
 
+builder.Services.AddAuthentication().AddGoogle(options =>
+{
+    options.ClientId = config["Authentication:Google:ClientId"];
+    options.ClientSecret = config["Authentication:Google:ClientSecret"];
+});
 builder.Services.AddTransient<IEmailSender, SendInBlueApiClient>();
 
 var app = builder.Build();
