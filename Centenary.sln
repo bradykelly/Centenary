@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Functions", "Cent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Mail", "Centenary.Mail\Centenary.Mail.csproj", "{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Razor", "Centenary.Razor\Centenary.Razor.csproj", "{934A5335-DF1B-40F5-A574-AE73FE979381}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{AC82D3CB-AF7E-493C-8875-7709A056682F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{934A5335-DF1B-40F5-A574-AE73FE979381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{934A5335-DF1B-40F5-A574-AE73FE979381}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{934A5335-DF1B-40F5-A574-AE73FE979381}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{934A5335-DF1B-40F5-A574-AE73FE979381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
