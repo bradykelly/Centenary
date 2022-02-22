@@ -32,7 +32,7 @@ public class SendInBlueApiClient: IEmailSender
             Subject = subject,
             HtmlContent = htmlMessage,
             TextContent = htmlMessage,
-            Sender = new SendSmtpEmailSender("Centenary", "brady@bradykelly.net")
+            Sender = new SendSmtpEmailSender("Centenary Web", "brady@bradykelly.net")
         };
 
         try
