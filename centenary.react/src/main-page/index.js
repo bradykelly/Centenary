@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './main-page.css';
+import {useEffect, useState, useMemo} from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Header from "./header";
+import FeaturedHouse from "./featured-house";
+import "./main-page.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [allHouses, setAllHouses] = useState([]);
+
+    useEffect(() => {
+        const fetchHouses = async () => {
+            const response = await fetch("/houses.json");
+            const houses = await response.json();
+            setAllHouses(houses);
+        };
+        fetchHouses();
+    }, []);
+
+    const featuredHouse = useMemo(() => {
+        if (allHouses.length) {
+            const randomIndex = Math.floor(Math.random() * allHouses.length);
+            return allHouses[randomIndex];
+        }
+    }, [allHouses]);
+  
+    return (
+        <Router>
+            <div className="container">
+                <Header subtitle="Providing houses all over the world" />
+                
+                <Switch>
+                    <Route path="/">
+                        <FeaturedHouse house={featuredHouse} />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
