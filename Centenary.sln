@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Functions", "Cent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Mail", "Centenary.Mail\Centenary.Mail.csproj", "{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{AC82D3CB-AF7E-493C-8875-7709A056682F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Razor", "Centenary.Razor\Centenary.Razor.csproj", "{CBAFA767-1DC7-4031-BD16-F094BE60FD75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Mvc", "Centenary.Mvc\Centenary.Mvc.csproj", "{F9246C1C-6EF2-4919-B6C8-D36ADB3889BF}"
@@ -33,10 +31,6 @@ Global
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC82D3CB-AF7E-493C-8875-7709A056682F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
