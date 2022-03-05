@@ -4,6 +4,13 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>4f93f1a5-6e2e-4dfe-a5f6-e7669fc31ae3</UserSecretsId>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Frontegg.SDK.AspNet" Version="1.0.0" />
+      <PackageReference Include="Frontegg.SDK.AspNet.Owin" Version="0.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.2" />
+    </ItemGroup>
 
 </Project>
