@@ -1,7 +1,13 @@
+using System.Windows.Input;
 using Centenary.Drive.Cli;
 
 IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services => { services.AddHostedService<Worker>(); })
+    .ConfigureServices(services =>
+    {
+        services.AddTransient<IDriveApiClient, DriveApiClient>();
+    })
     .Build();
 
-await host.RunAsync();
+var service = host.Services.GetRequiredService<IDriveApiClient>();
+await service.CreateSharedDrive("spinks");
+//var check = files;
