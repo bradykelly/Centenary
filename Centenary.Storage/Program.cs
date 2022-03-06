@@ -7,5 +7,5 @@ IHost host = Host.CreateDefaultBuilder(args)
     .Build();
 
 var client = host.Services.GetRequiredService<IBlobApiClient>();
-var names = await client.GetBlobNames();
+var names = await client.GetBlobNames("archive");
 var check = names;

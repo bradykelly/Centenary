@@ -15,11 +15,16 @@ public class BlobApiClient : IBlobApiClient
         _pathDelimiter = _configuration["Azure:Blobs:PathDelimiter"] ?? "/";
     }
 
-    public async Task<List<string>> GetBlobNames()
+    public async Task<List<string>> GetBlobNames(string containerName)
     {
+        if (string.IsNullOrWhiteSpace(containerName))
+        {
+            throw new ArgumentNullException($"{nameof(containerName)} is required", nameof(containerName));
+        }
+
         var retList = new List<string>();
         var blobServiceClient = GetServiceClient();
-        var containerClient = blobServiceClient.GetBlobContainerClient("archive");
+        var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
 
         async Task GetBlobNamesRecursive(string? prefix = null)
         {
