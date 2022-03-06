@@ -2,5 +2,5 @@
 
 public interface IBlobApiClient
 {
-    Task<List<string>> GetPictureNames();
+    Task<List<string>> GetBlobNames();
 }
