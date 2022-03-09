@@ -9,12 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Functions", "Cent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Mail", "Centenary.Mail\Centenary.Mail.csproj", "{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Razor", "Centenary.Razor\Centenary.Razor.csproj", "{CBAFA767-1DC7-4031-BD16-F094BE60FD75}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{76B801D0-1071-41D3-B580-BA7680D405D5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Mvc", "Centenary.Mvc\Centenary.Mvc.csproj", "{03D05F20-F553-4700-BC65-4F1FA1D8D298}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Drive", "Centenary.Drive\Centenary.Drive.csproj", "{F9DF77A4-A887-4E31-9CB2-D9F163C1A1C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Drive.Cli", "Centenary.Drive.Cli\Centenary.Drive.Cli.csproj", "{4ABE63AD-A9BD-4AF2-ACAB-C136BE85DDAF}"
@@ -37,18 +31,6 @@ Global
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBAFA767-1DC7-4031-BD16-F094BE60FD75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76B801D0-1071-41D3-B580-BA7680D405D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76B801D0-1071-41D3-B580-BA7680D405D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76B801D0-1071-41D3-B580-BA7680D405D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76B801D0-1071-41D3-B580-BA7680D405D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03D05F20-F553-4700-BC65-4F1FA1D8D298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03D05F20-F553-4700-BC65-4F1FA1D8D298}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03D05F20-F553-4700-BC65-4F1FA1D8D298}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03D05F20-F553-4700-BC65-4F1FA1D8D298}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9DF77A4-A887-4E31-9CB2-D9F163C1A1C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9DF77A4-A887-4E31-9CB2-D9F163C1A1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9DF77A4-A887-4E31-9CB2-D9F163C1A1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
