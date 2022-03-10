@@ -20,7 +20,7 @@ public class BlobApiClient : IBlobApiClient
     {
         var blobServiceClient = GetServiceClient();
         var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-        var blobPath = !string.IsNullOrWhiteSpace(prefix?.Trim(_pathDelimiter)) ? $"{prefix.Trim('/')}{_pathDelimiter}{blobName}" : blobName;
+        var blobPath = !string.IsNullOrWhiteSpace(prefix?.Trim(_pathDelimiter)) ? $"{prefix.Trim(_pathDelimiter)}{_pathDelimiter}{blobName}" : blobName;
         await using var fileStream = File.OpenRead(filePath);
         await containerClient.UploadBlobAsync(blobPath, fileStream, cancellationToken);
     }
