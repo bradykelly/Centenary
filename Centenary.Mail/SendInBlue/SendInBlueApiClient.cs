@@ -28,7 +28,6 @@ public class SendInBlueApiClient: IEmailSender
         var sendSmtpEmail = new SendSmtpEmail
         {
             To = new List<SendSmtpEmailTo>{new(email)},
-            //sendSmtpEmail.To = new List<SendSmtpEmailTo>(new[] { new SendSmtpEmailTo { Email = email } });
             Subject = subject,
             HtmlContent = htmlMessage,
             TextContent = htmlMessage,
