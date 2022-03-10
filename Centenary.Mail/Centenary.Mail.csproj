@@ -14,4 +14,13 @@
       <PackageReference Include="sib_api_v3_sdk" Version="3.2.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\Centenary.Mvc\appsettings.Development.json">
+        <Link>appsettings.Development.json</Link>
+      </Content>
+      <Content Include="..\Centenary.Mvc\appsettings.json">
+        <Link>appsettings.json</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>
