@@ -16,13 +16,18 @@ public class ApplicationDbContext : IdentityDbContext
         base.OnModelCreating(builder);
         
         builder.Entity<Folder>()
-            .HasOne<Folder>(f => f.Parent)
+            .HasOne(f => f.Parent)
             .WithMany(f => f.Folders)
             .HasForeignKey(f => f.ParentId);
         
         builder.Entity<Document>()
-            .HasIndex(u => new { u.Name, u.Folder })
+            .HasIndex(u => new { u.Name, u.FolderId })
             .IsUnique();
+        
+        // builder.Entity<Document>()
+        //     .HasOne(d => d.Folder)
+        //     .WithMany(f => f.Documents)
+        //     .HasForeignKey(d => d.FolderId);
     }
 
     public DbSet<Folder> Folders { get; set; }
