@@ -24,12 +24,12 @@ public class ApplicationDbContext : IdentityDbContext
             .HasIndex(u => new { u.Name, u.FolderId })
             .IsUnique();
         
-        // builder.Entity<Document>()
-        //     .HasOne(d => d.Folder)
-        //     .WithMany(f => f.Documents)
-        //     .HasForeignKey(d => d.FolderId);
+        builder.Entity<Document>()
+            .HasOne(d => d.Folder)
+            .WithMany(f => f.Documents)
+            .HasForeignKey(d => d.FolderId);
     }
 
-    public DbSet<Folder> Folders { get; set; }
+    public DbSet<Folder> Folders { get; set; } = null!;
     public DbSet<Document> Documents { get; set; } = null!;
 }

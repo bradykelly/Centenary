@@ -12,5 +12,5 @@ public class Document
     public string UploadedBy { get; set; } = "";
     public DateTime UploadedOn { get; set; }
     
-    // public Folder? Folder { get; set; }
+    public Folder? Folder { get; set; }
 }
