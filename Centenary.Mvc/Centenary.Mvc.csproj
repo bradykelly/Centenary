@@ -23,4 +23,8 @@
       <ProjectReference Include="..\Centenary.Storage\Centenary.Storage.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
 </Project>
