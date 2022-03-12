@@ -20,11 +20,7 @@ public interface IBlobApiClient
     /// </summary>
     /// <param name="containerName">The name of the container to list blobs for.</param>
     /// <param name="prefix">Blob name/path Prefix under which to list blobs.</param>
-    /// <param name="foldersOnly">list only folders under <paramref name="prefix"/>and does not recurse.</param>
     /// <param name="cancellationToken">A <see cref="CancellationToken"/>passed to methods on the Azure storage API.</param>
-    /// <returns>
-    /// A list of full blob paths i.e. prefixes and names for each blob in the container named <paramref name="containerName"/>.
-    /// Only a list of names of blob prefixes directly under <paramref name="prefix"/> is returned if <paramref name="foldersOnly"/> is true.
-    /// </returns>
-    Task<List<string>> GetBlobNames(string containerName, string? prefix = null, bool foldersOnly = false, CancellationToken cancellationToken = default);
+    /// <returns>A list of full blob paths i.e. prefixes and names for each blob in the container named <paramref name="containerName"/>.</returns>
+    Task<List<string>> GetBlobNamesByHierarchy(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
 }
