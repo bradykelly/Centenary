@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Centenary.Mvc.Controllers;
 
-public class FileTreeController : Controller
+public class DocTreeController : Controller
 {
     private readonly IBlobApiClient _blobApiClient;
-    private readonly ILogger<FileTreeController> _logger;
+    private readonly ILogger<DocTreeController> _logger;
 
-    public FileTreeController(IBlobApiClient blobApiClient, ILogger<FileTreeController> logger, ILogger<FileTreeController> logger1)
+    public DocTreeController(IBlobApiClient blobApiClient, ILogger<DocTreeController> logger, ILogger<DocTreeController> logger1)
     {
         _blobApiClient = blobApiClient;
         _logger = logger1;
