@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>605d2dd3-7245-412d-bb24-e5d654247a62</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Centenary.Storage\Centenary.Storage.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="auth0.aspnetcore.authentication" Version="1.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\DocTree\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="app.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </None>
+    </ItemGroup>
+
+</Project>

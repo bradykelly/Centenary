@@ -1,6 +1,6 @@
 ﻿using Centenary.Storage;
 
-namespace Centenary.Mvc.Models.DocTree;
+namespace Centenary.Web.Models.DocTree;
 
 /// <summary>
 /// Models a folder and document tree.

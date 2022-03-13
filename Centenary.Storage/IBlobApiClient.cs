@@ -2,6 +2,8 @@
 
 public interface IBlobApiClient
 {
+    char PathDelimiter { get; }
+
     // BKTODO Create overloads that take a path tree or folder id instead of a prefix, convert path to prefix and call the prefix overloads
     
     /// <summary>
@@ -23,4 +25,11 @@ public interface IBlobApiClient
     /// <param name="cancellationToken">A <see cref="CancellationToken"/>passed to methods on the Azure storage API.</param>
     /// <returns>A list of full blob paths i.e. prefixes and names for each blob in the container named <paramref name="containerName"/>.</returns>
     Task<List<string>> GetBlobNamesByHierarchy(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
+
+    // BKTODO Document these
+    
+    public Task<List<string>> GetFolderNames(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
+    
+    public Task<List<string>> GetBlobNames(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
+    
 }
