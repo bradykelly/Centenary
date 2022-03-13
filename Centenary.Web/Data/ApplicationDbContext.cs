@@ -13,22 +13,23 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        
+
         builder.Entity<FolderDto>()
             .ToTable("Folder")
-            .HasOne(f => f.Parent)
-            .WithMany(f => f.Folders)
-            .HasForeignKey(f => f.ParentId);
-        
+            .HasIndex(f => f.Path)
+            .IsUnique();
+
         builder.Entity<DocumentDto>()
             .ToTable("Document")
-            .HasIndex(u => new { u.Name, u.FolderId })
+            .HasIndex(u => new { u.Name, u.FolderPath })
             .IsUnique();
         
         builder.Entity<DocumentDto>()
             .HasOne(d => d.Folder)
             .WithMany(f => f.Documents)
-            .HasForeignKey(d => d.FolderId);
+            .HasForeignKey(d => d.FolderPath)
+            .HasPrincipalKey( f => f.Path)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 
     public DbSet<FolderDto> Folders { get; set; } = null!;
