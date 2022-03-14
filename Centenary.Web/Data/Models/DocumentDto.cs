@@ -6,8 +6,8 @@ public class DocumentDto
     public string Name { get; set; } = "";
     public string? Description { get; set; }
     public string FolderPath { get; } = "";
-    public string UploadedBy { get; set; } = "";
-    public DateTime UploadedOn { get; set; }
+    public string CreatedBy { get; set; } = "";
+    public DateTime CreatedOn { get; set; }
     
     public FolderDto? Folder { get; set; }
 }
