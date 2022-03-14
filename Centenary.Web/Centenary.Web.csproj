@@ -36,8 +36,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="app.db">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <None Include="wwwroot\db\app.db">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </None>
     </ItemGroup>
