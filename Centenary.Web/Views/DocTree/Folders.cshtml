@@ -1,0 +1,17 @@
+﻿@model Centenary.Web.ViewModels.DocTreeViewModel
+
+@{
+    ViewBag.Title = "Folders";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>Folders under: <strong>@Model.ParentPath</strong></h3>
+<ul>
+    @foreach(var folder in Model.Folders)
+    {
+        <li>
+            <a asp-controller="DocTree" asp-action="Folders">@folder.Name</a>
+        </li>
+    }
+</ul>
+<p><em>@Model.Folders.Count()</em> folders found.</p>

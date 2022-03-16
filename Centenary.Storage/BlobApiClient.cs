@@ -12,8 +12,9 @@ public class BlobApiClient : IBlobApiClient
     public BlobApiClient(IConfiguration configuration)
     {
         _configuration = configuration;
-        // The '/' is Azure's default for path delimiters. I want to kept it at one char so I ignore the rest of the configured delimiter string.
-        PathDelimiter = string.IsNullOrWhiteSpace(_configuration["Azure:Blobs:PathDelimiter"]) ? '/' : _configuration["Azure:Blobs:PathDelimiter"][0];
+        // The '/' is Azure's default for path delimiters. Operations like GetBlobs automatically use forward slashes, so we need to always use forward slashes in our paths.
+        //PathDelimiter = string.IsNullOrWhiteSpace(_configuration["Azure:Blobs:PathDelimiter"]) ? '/' : _configuration["Azure:Blobs:PathDelimiter"][0];
+        PathDelimiter = '/';
     }
 
     /// <inheritdoc cref="IBlobApiClient.UploadBlob" />
@@ -74,7 +75,7 @@ public class BlobApiClient : IBlobApiClient
         return retList;
     }
     
-    public async Task<List<string>> GetBlobNames(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
+    public async Task<List<string>> GetBlobNamesByPrefix(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(containerName))
         {
@@ -87,7 +88,7 @@ public class BlobApiClient : IBlobApiClient
         await foreach(var blobItem in containerClient.GetBlobsAsync(prefix: prefix, cancellationToken: cancellationToken))
         {
             // Hard coded path delimiter because GetBlobsAsync doesn't take a delimiter parameter and returns delimiter '/' by default
-            if (string.IsNullOrWhiteSpace(prefix) && blobItem.Name.Split('/').Length > 1)
+            if (string.IsNullOrWhiteSpace(prefix) && blobItem.Name.Split(PathDelimiter).Length > 1)
             {
                 continue;
             }

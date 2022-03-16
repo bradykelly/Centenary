@@ -1,22 +1,38 @@
 ﻿using Centenary.Storage;
+using Centenary.Web.Service;
+using Centenary.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Centenary.Web.Controllers;
 
 public class DocTreeController : Controller
 {
-    private readonly IBlobApiClient _blobApiClient;
+    private readonly IDocumentTreeService _treeService;
     private readonly ILogger<DocTreeController> _logger;
+    private readonly IConfiguration _config;
 
-    public DocTreeController(IBlobApiClient blobApiClient, ILogger<DocTreeController> logger, ILogger<DocTreeController> logger1)
+    private readonly string _anonUser;
+    private readonly string _container;
+
+    public DocTreeController(IDocumentTreeService treeService, ILogger<DocTreeController> logger, IConfiguration configuration)
     {
-        _blobApiClient = blobApiClient;
-        _logger = logger1;
+        _treeService = treeService;
+        _logger = logger;
+        _config = configuration;
+        
+        _anonUser = _config["Web:Docs:AnonymousUser"];
+        _container = _config["Azure:Blobs:DefaultContainer"];
     }
     
     // GET
-    public IActionResult Index()
+    public async Task<IActionResult> Folders()
     {
-        return View();
+        var tree = await _treeService.IndexBlobs(_container, _anonUser);
+        var model = new DocTreeViewModel();
+        model.Folders = tree.Folders
+            .Where(f => string.IsNullOrWhiteSpace(f.ParentPath))
+            .OrderBy(f => f.Name);
+        
+        return View(model);
     }
 }

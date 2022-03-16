@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Centenary.Mvc.Data;
 using Centenary.Storage;
 using Centenary.Web.Data;
+using Centenary.Web.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IBlobApiClient, BlobApiClient>();
+builder.Services.AddScoped<IDocumentTreeService, DocumentTreeService>();
 
 var app = builder.Build();
 

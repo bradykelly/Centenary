@@ -32,10 +32,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\DocTree\Index.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Include="wwwroot\db\app.db">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </None>

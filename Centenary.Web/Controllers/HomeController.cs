@@ -8,17 +8,15 @@ namespace Centenary.Web.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IBlobApiClient _blobApiClient;
 
-    public HomeController(ILogger<HomeController> logger, IBlobApiClient blobApiClient)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _blobApiClient = blobApiClient;
     }
 
     public IActionResult Index()
     {
-        return View();
+        return RedirectToAction("Folders", "DocTree");
     }
 
     public IActionResult Privacy()

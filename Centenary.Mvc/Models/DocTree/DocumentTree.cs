@@ -19,18 +19,4 @@ public class DocumentTree
         _apiClient = apiClient;
         _pathDelimiter = _apiClient.PathDelimiter;
     }
-
-    /// <summary>
-    /// Synchronizes a folder in a document tree model with the blob storage and the local folder tree.
-    /// </summary>
-    /// <param name="parentPath">The absolute path to the parent folder to index.</param>
-    public async Task Index(string parentPath)
-    {
-        var folders = await _apiClient.GetFolderNames(ArchiveContainerName);
-        
-        foreach(var folder in folders)
-        {
-        
-        }
-    }
 }
