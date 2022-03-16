@@ -22,6 +22,7 @@ public class DocumentTree
 
     public DocumentTree()
     {
+        // Initialize folders with one root folder that has no name or parent.
         Folders = new HashSet<Folder>(_folderEqualityComparer){new()};
         Documents = new HashSet<Document>(_documentEqualityComparer);
     }

@@ -87,11 +87,11 @@ public class BlobApiClient : IBlobApiClient
         
         await foreach(var blobItem in containerClient.GetBlobsAsync(prefix: prefix, cancellationToken: cancellationToken))
         {
-            // Hard coded path delimiter because GetBlobsAsync doesn't take a delimiter parameter and returns delimiter '/' by default
-            if (string.IsNullOrWhiteSpace(prefix) && blobItem.Name.Split(PathDelimiter).Length > 1)
-            {
-                continue;
-            }
+            // I had some reason to omit blobs with prefixes here, probably when I was planning on calling this method recursively.
+            // if (string.IsNullOrWhiteSpace(prefix) && blobItem.Name.Split(PathDelimiter).Length > 1)
+            // {
+            //     continue;
+            // }
             var name = !string.IsNullOrWhiteSpace(prefix) ? blobItem.Name.Replace(prefix!, "") : blobItem.Name;
             retList.Add(name);
         }

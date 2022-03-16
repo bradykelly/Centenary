@@ -25,8 +25,6 @@ public class Folder
         }
     }
     
-    private readonly Document.EqualityComparer _documentEqualityComparer = new();
-    
     public int Id { get; set; }
 
     public string FullPath { get; set; } = "";
@@ -34,11 +32,4 @@ public class Folder
     public string Name => string.IsNullOrWhiteSpace(FullPath) ? "" : Path.GetFileName(FullPath);
     
     public string ParentPath => string.IsNullOrWhiteSpace(FullPath) ? "" : Path.GetDirectoryName(FullPath) ?? "";
-
-    public HashSet<Document> Documents { get; }
-
-    public Folder()
-    {
-        Documents = new HashSet<Document>(_documentEqualityComparer);
-    }
 }

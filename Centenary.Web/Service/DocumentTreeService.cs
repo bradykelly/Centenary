@@ -52,7 +52,7 @@ public class DocumentTreeService : IDocumentTreeService
                     CreatedOn = DateTime.Now
                 };
 
-                tree.Root.Documents.Add(doc);
+                tree.Documents.Add(doc);
             }
             else
             {
@@ -72,7 +72,7 @@ public class DocumentTreeService : IDocumentTreeService
                     CreatedBy = username,
                     CreatedOn = DateTime.Now
                 };
-                folder.Documents.Add(doc);
+                tree.Documents.Add(doc);
             }
         }
         

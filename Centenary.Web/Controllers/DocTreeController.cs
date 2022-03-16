@@ -30,8 +30,11 @@ public class DocTreeController : Controller
         var tree = await _treeService.IndexBlobs(_container, _anonUser);
         var model = new DocTreeViewModel();
         model.Folders = tree.Folders
-            .Where(f => string.IsNullOrWhiteSpace(f.ParentPath))
+            .Where(f => !string.IsNullOrWhiteSpace(f.FullPath) && string.IsNullOrWhiteSpace(f.ParentPath))
             .OrderBy(f => f.Name);
+        model.Documents = tree.Documents
+            .Where(d => string.IsNullOrWhiteSpace(d.Folder.Name))
+            .OrderBy(d => d.Name);
         
         return View(model);
     }
