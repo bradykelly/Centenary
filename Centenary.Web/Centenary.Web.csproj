@@ -35,6 +35,8 @@
       <None Include="wwwroot\db\app.db">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       </None>
+      <None Remove="Dockerfile" />
+      <None Remove=".dockerignore" />
     </ItemGroup>
 
 </Project>
