@@ -5,11 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Storage", "Centenary.Storage\Centenary.Storage.csproj", "{65087576-371A-415F-A8E8-C840E6AE1FA8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Functions", "Centenary.Functions\Centenary.Functions.csproj", "{23098E52-04D7-4054-B335-F8FD1640A52A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centenary.Mail", "Centenary.Mail\Centenary.Mail.csproj", "{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Mvc", "Centenary.Mvc\Centenary.Mvc.csproj", "{1ED0E263-0B0A-49DC-B971-5660DF3C6513}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Web", "Centenary.Web\Centenary.Web.csproj", "{666A853F-DD8D-4974-B42E-901417B9F639}"
 EndProject
@@ -23,18 +19,10 @@ Global
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65087576-371A-415F-A8E8-C840E6AE1FA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23098E52-04D7-4054-B335-F8FD1640A52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23098E52-04D7-4054-B335-F8FD1640A52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23098E52-04D7-4054-B335-F8FD1640A52A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23098E52-04D7-4054-B335-F8FD1640A52A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC25B146-BB9A-4AA1-A3A3-69A4129410A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1ED0E263-0B0A-49DC-B971-5660DF3C6513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1ED0E263-0B0A-49DC-B971-5660DF3C6513}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1ED0E263-0B0A-49DC-B971-5660DF3C6513}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1ED0E263-0B0A-49DC-B971-5660DF3C6513}.Release|Any CPU.Build.0 = Release|Any CPU
 		{666A853F-DD8D-4974-B42E-901417B9F639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{666A853F-DD8D-4974-B42E-901417B9F639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{666A853F-DD8D-4974-B42E-901417B9F639}.Release|Any CPU.ActiveCfg = Release|Any CPU
