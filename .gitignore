@@ -1,12 +1,11 @@
+*.db-shm
+*.db-wal
 bin/
 obj/
 /packages/
 /node_modules/
 riderModule.iml
 /_ReSharper.Caches/
-Centenary.React/react-practical-start/
-/Centenary.Drive.Cli/ApiAccountKey/sphynx-drive-170cc41754a5.json
-/Centenary.Worker/
 /Centenary.Files/
 ApiAccountKey
 /Publish/

@@ -24,6 +24,7 @@ public class DocumentsController : Controller
     {
         var tree = await _treeService.IndexBlobs();
         var model = new DocTreeViewModel();
+        model.ParentPath = string.IsNullOrWhiteSpace(folderPath) ? "/" : folderPath;
         model.Folders = tree.Folders
             .Where(f => f.ParentPath == folderPath)
             .OrderBy(f => f.Name);

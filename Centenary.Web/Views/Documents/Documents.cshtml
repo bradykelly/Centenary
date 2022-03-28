@@ -1,7 +1,7 @@
 ﻿@model Centenary.Web.ViewModels.DocTreeViewModel
 
 @{
-    ViewBag.Title = "Folders";
+    ViewBag.Title = "Document List";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -10,7 +10,7 @@
     @foreach(var folder in Model.Folders)
     {
         <li>
-            <a asp-controller="Documents" asp-action="Documents">@folder.Name</a>
+            <a asp-controller="Documents" asp-action="Documents" asp-route-folderPath="@folder.FullPath">@folder.Name</a>
         </li>
     }
 </ul>
