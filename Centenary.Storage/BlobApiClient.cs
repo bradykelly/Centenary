@@ -12,9 +12,9 @@ public class BlobApiClient : IBlobApiClient
     public BlobApiClient(IConfiguration configuration)
     {
         _configuration = configuration;
-        // The '/' is Azure's default for path delimiters. Operations like GetBlobs automatically use forward slashes, so we need to always use forward slashes in our paths.
-        //PathDelimiter = string.IsNullOrWhiteSpace(_configuration["Azure:Blobs:PathDelimiter"]) ? '/' : _configuration["Azure:Blobs:PathDelimiter"][0];
-        PathDelimiter = '/';
+
+        var delim = _configuration["Azure:Blobs:PathDelimiter"];
+        PathDelimiter = string.IsNullOrWhiteSpace(delim) ? '/' : delim[0];
     }
 
     /// <inheritdoc cref="IBlobApiClient.UploadBlob" />
@@ -84,16 +84,11 @@ public class BlobApiClient : IBlobApiClient
         
         var retList = new List<string>();
         var containerClient = GetContainerClient(containerName);
-        
         await foreach(var blobItem in containerClient.GetBlobsAsync(prefix: prefix, cancellationToken: cancellationToken))
         {
-            // I had some reason to omit blobs with prefixes here, probably when I was planning on calling this method recursively.
-            // if (string.IsNullOrWhiteSpace(prefix) && blobItem.Name.Split(PathDelimiter).Length > 1)
-            // {
-            //     continue;
-            // }
-            var name = !string.IsNullOrWhiteSpace(prefix) ? blobItem.Name.Replace(prefix!, "") : blobItem.Name;
-            retList.Add(name);
+            var name = !string.IsNullOrWhiteSpace(prefix) ? blobItem.Name.Replace(prefix, "") : blobItem.Name;
+            // GetBlobsAsync always returns names using a forward slash as the delimiter
+            retList.Add(name.Replace("/", PathDelimiter.ToString()));
         }
         
         return retList;

@@ -39,4 +39,9 @@
       <None Remove=".dockerignore" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations" />
+      <Folder Include="wwwroot\db" />
+    </ItemGroup>
+
 </Project>

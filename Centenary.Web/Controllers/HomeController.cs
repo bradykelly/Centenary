@@ -16,7 +16,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return RedirectToAction("Folders", "DocTree");
+        return RedirectToAction("Documents", "Documents");
     }
 
     public IActionResult Privacy()

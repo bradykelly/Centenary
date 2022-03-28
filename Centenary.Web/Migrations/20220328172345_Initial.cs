@@ -3,40 +3,39 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Centenary.Mvc.Data.Migrations
+namespace Centenary.Web.Migrations
 {
-    public partial class AddDocument : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Documents",
+                name: "Document",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
+                    FullPath = table.Column<string>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
-                    Folder = table.Column<string>(type: "TEXT", nullable: true),
-                    UploadedBy = table.Column<string>(type: "TEXT", nullable: false),
-                    UploadedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Documents", x => x.Id);
+                    table.PrimaryKey("PK_Document", x => x.Id);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Documents_Name_Folder",
-                table: "Documents",
-                columns: new[] { "Name", "Folder" },
+                name: "IX_Document_FullPath",
+                table: "Document",
+                column: "FullPath",
                 unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Documents");
+                name: "Document");
         }
     }
 }

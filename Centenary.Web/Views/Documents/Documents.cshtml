@@ -10,7 +10,7 @@
     @foreach(var folder in Model.Folders)
     {
         <li>
-            <a asp-controller="DocTree" asp-action="Folders">@folder.Name</a>
+            <a asp-controller="Documents" asp-action="Documents">@folder.Name</a>
         </li>
     }
 </ul>
@@ -20,7 +20,7 @@
     @foreach(var doc in Model.Documents)
     {
         <li>
-            <a asp-controller="DocTree" asp-action="Folders">@doc.Name</a>
+            <a asp-controller="Documents" asp-action="Documents">@doc.Name</a>
         </li>
     }
 </ul>

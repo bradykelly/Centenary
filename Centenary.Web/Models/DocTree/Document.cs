@@ -14,24 +14,24 @@ public class Document
             {
                 return false;
             }
-            return x.Name.Equals(y.Name, StringComparison.InvariantCulture);
+            return x.Name.Equals(y.Name, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public int GetHashCode(Document obj)
         {
-            return obj.Id.GetHashCode();
+            return obj.FullPath.GetHashCode();
         }
     }
     
-    public int Id { get; set; }
+    public string Name => Path.GetFileName(FullPath);
     
-    public string Name { get; set; } = "";
-    
-    public Folder Folder { get; set; } = new Folder();
+    public string FolderPath => Path.GetDirectoryName(FullPath) ?? string.Empty;
+
+    public string FullPath { get; set; } = string.Empty;
     
     public string? Description { get; set; }
     
-    public string CreatedBy { get; set; } = "System";
+    public string CreatedBy { get; set; } = string.Empty;
     
     public DateTime CreatedOn { get; set; }
 }

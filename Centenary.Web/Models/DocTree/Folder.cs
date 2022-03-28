@@ -16,7 +16,7 @@ public class Folder
             {
                 return false;
             }
-            return x.FullPath.Equals(y.FullPath, StringComparison.InvariantCulture);
+            return x.FullPath.Equals(y.FullPath, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public int GetHashCode(Folder obj)
@@ -27,9 +27,9 @@ public class Folder
     
     public int Id { get; set; }
 
-    public string FullPath { get; set; } = "";
+    public string FullPath { get; set; } = string.Empty;
     
-    public string Name => string.IsNullOrWhiteSpace(FullPath) ? "" : Path.GetFileName(FullPath);
+    public string Name => Path.GetFileName(FullPath);
     
-    public string ParentPath => string.IsNullOrWhiteSpace(FullPath) ? "" : Path.GetDirectoryName(FullPath) ?? "";
+    public string ParentPath => Path.GetDirectoryName(FullPath) ?? string.Empty;
 }

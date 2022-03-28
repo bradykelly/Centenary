@@ -1,22 +1,21 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Centenary.Mvc.Data;
 using Centenary.Storage;
 using Centenary.Web.Data;
+using Centenary.Web.Models;
 using Centenary.Web.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var dbPath = Path.Combine(builder.Environment.WebRootPath, "db", "app.db");
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite($"DataSource={dbPath};Cache=Shared"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews();
 
+builder.Services.Configure<BlobOptions>(builder.Configuration.GetSection("Azure:Blobs"));
 builder.Services.AddScoped<IBlobApiClient, BlobApiClient>();
-builder.Services.AddScoped<IDocumentTreeService, DocumentTreeService>();
+builder.Services.AddScoped<IDocumentService, DocumentService>();
 
 var app = builder.Build();
 
@@ -24,6 +23,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+    app.UseDeveloperExceptionPage();
 }
 else
 {
