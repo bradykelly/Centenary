@@ -102,6 +102,6 @@ public class BlobApiClient : IBlobApiClient
     
     private BlobServiceClient GetServiceClient()
     {
-        return new BlobServiceClient(_configuration["Azure:Storage:ConnectionString"]);
+        return new BlobServiceClient(_configuration["Azure:Blobs:ConnectionString"]);
     }
 }
