@@ -41,11 +41,13 @@ public class DocumentService : IDocumentService
         var docs = new DocumentList();
 
         // Call without a prefix to get all blobs in the container with their full paths.
-        var allBlobNames = await _blobApiClient.GetBlobNamesByPrefix(_options.DefaultContainer, prefix);
+        var allBlobNames = await _blobApiClient.GetBlobPathsByPrefix(_options.DefaultContainer, prefix);
 
-        foreach (var blobName in allBlobNames)
+        foreach (var blobPath in allBlobNames.Select(n => n.Trim(_options.PathDelimiter[0])))
         {
-            var folder = new Folder { FullPath = Path.GetDirectoryName(blobName) ?? string.Empty };
+            var blobName = !blobPath.Contains(_options.PathDelimiter) ? string.Concat(prefix, _options.PathDelimiter, blobPath) : blobPath;
+            
+            var folder = new Folder { FullPath = Path.GetDirectoryName(blobPath)?.Replace("\\", _options.PathDelimiter) ?? string.Empty };
             if (!string.IsNullOrWhiteSpace(folder.FullPath) && !docs.Folders.Contains(folder))
             {
                 docs.Folders.Add(folder);
@@ -53,13 +55,16 @@ public class DocumentService : IDocumentService
 
             var doc = new Document
             {
-                FullPath = blobName
+                FullPath = blobName,
+                FolderPath = Path.GetDirectoryName(blobName)?.Replace("\\", _options.PathDelimiter) ?? string.Empty
             };
             var dto = await _dbContext.Documents.FirstOrDefaultAsync(d => d.FullPath == blobName);
             if (dto == null)
             {
                 doc.CreatedBy = _options.SystemUserName;
                 doc.CreatedOn = DateTime.Now;
+                _dbContext.Documents.Add(doc.ToDto());
+                await _dbContext.SaveChangesAsync();
             }
             else
             {

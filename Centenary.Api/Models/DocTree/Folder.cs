@@ -23,8 +23,6 @@ public class Folder
         }
     }
     
-    public int Id { get; set; }
-
     public string FullPath { get; set; } = string.Empty;
     
     public string Name => Path.GetFileName(FullPath);

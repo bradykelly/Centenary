@@ -8,5 +8,5 @@ IHost host = Host.CreateDefaultBuilder(args)
 
 const string filePath = @"D:\Personal\Dotnet Projects\Centenary\Centenary.Files\Folder 2\sphynx bye laws.PDF";
 var client = host.Services.GetRequiredService<IBlobApiClient>();
-var names = await client.GetBlobNamesByPrefix("archive");
+var names = await client.GetBlobPathsByPrefix("archive");
 var check = names;

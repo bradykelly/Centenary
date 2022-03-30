@@ -26,6 +26,6 @@ public interface IBlobApiClient
     /// <returns>A list of full blob paths i.e. prefixes and names for each blob in the container named <paramref name="containerName"/>.</returns>
     Task<List<string>> GetBlobNamesByHierarchy(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
 
-    public Task<List<string>> GetBlobNamesByPrefix(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
+    public Task<List<string>> GetBlobPathsByPrefix(string containerName, string? prefix = null, CancellationToken cancellationToken = default);
     
 }

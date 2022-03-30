@@ -39,7 +39,7 @@ public class DocumentService : IDocumentService
         var tree = new DocumentList();
 
         // Call without a prefix to get all blobs in the container with their full paths.
-        var allBlobNames = await _blobApiClient.GetBlobNamesByPrefix(_options.DefaultContainer);
+        var allBlobNames = await _blobApiClient.GetBlobPathsByPrefix(_options.DefaultContainer);
 
         foreach (var blobName in allBlobNames)
         {

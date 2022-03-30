@@ -75,7 +75,7 @@ public class BlobApiClient : IBlobApiClient
         return retList;
     }
     
-    public async Task<List<string>> GetBlobNamesByPrefix(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
+    public async Task<List<string>> GetBlobPathsByPrefix(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(containerName))
         {
@@ -86,9 +86,8 @@ public class BlobApiClient : IBlobApiClient
         var containerClient = GetContainerClient(containerName);
         await foreach(var blobItem in containerClient.GetBlobsAsync(prefix: prefix, cancellationToken: cancellationToken))
         {
-            var name = !string.IsNullOrWhiteSpace(prefix) ? blobItem.Name.Replace(prefix, "") : blobItem.Name;
             // GetBlobsAsync always returns names using a forward slash as the delimiter
-            retList.Add(name.Replace("/", PathDelimiter.ToString()));
+            retList.Add(blobItem.Name.Replace("/", PathDelimiter.ToString()));
         }
         
         return retList;

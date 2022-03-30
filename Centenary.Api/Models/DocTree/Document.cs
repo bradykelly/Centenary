@@ -1,4 +1,6 @@
-﻿namespace Centenary.Api.Models.DocTree;
+﻿using Centenary.Api.Data.Models;
+
+namespace Centenary.Api.Models.DocTree;
 
 public class Document
 {
@@ -25,7 +27,7 @@ public class Document
     
     public string Name => Path.GetFileName(FullPath);
     
-    public string FolderPath => Path.GetDirectoryName(FullPath) ?? string.Empty;
+    public string FolderPath { get; set; } = string.Empty;
 
     public string FullPath { get; set; } = string.Empty;
     
@@ -34,4 +36,15 @@ public class Document
     public string CreatedBy { get; set; } = string.Empty;
     
     public DateTime CreatedOn { get; set; }
+    
+    public DocumentDto ToDto()
+    {
+        return new DocumentDto
+        {
+            FullPath = FullPath,
+            Description = Description,
+            CreatedBy = CreatedBy,
+            CreatedOn = CreatedOn
+        };
+    }
 }
