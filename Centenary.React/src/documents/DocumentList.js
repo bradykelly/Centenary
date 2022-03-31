@@ -3,7 +3,7 @@
 function DocumentList(props) {
   return (
       <section>
-        <h3>Documents available under the {props.parentFolder} folder:</h3>
+        <h3>Documents available under the {props.parentFolder || "/"} folder:</h3>
       </section>
   );
 }
