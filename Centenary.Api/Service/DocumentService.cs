@@ -47,7 +47,9 @@ public class DocumentService : IDocumentService
         {
             var blobName = !blobPath.Contains(_options.PathDelimiter) ? string.Concat(prefix, _options.PathDelimiter, blobPath) : blobPath;
             
-            var folder = new Folder { FullPath = Path.GetDirectoryName(blobPath)?.Replace("\\", _options.PathDelimiter) ?? string.Empty };
+            var folder = new Folder();
+            folder.FullPath = Path.GetDirectoryName(blobPath)?.Replace("\\", _options.PathDelimiter) ?? string.Empty;
+            folder.ParentPath = Path.GetDirectoryName(folder.FullPath)?.Replace("\\", _options.PathDelimiter) ?? string.Empty;
             if (!string.IsNullOrWhiteSpace(folder.FullPath) && !docs.Folders.Contains(folder))
             {
                 docs.Folders.Add(folder);

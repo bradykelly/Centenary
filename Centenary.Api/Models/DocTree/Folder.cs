@@ -27,5 +27,5 @@ public class Folder
     
     public string Name => Path.GetFileName(FullPath);
     
-    public string ParentPath => Path.GetDirectoryName(FullPath) ?? string.Empty;
+    public string ParentPath  { get; set; } = string.Empty;
 }

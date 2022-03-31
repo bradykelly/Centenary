@@ -27,32 +27,27 @@ public class BlobApiClient : IBlobApiClient
     }
 
     /// <inheritdoc cref="IBlobApiClient.GetBlobNamesByHierarchy" />
-    public async Task<List<string>> GetBlobNamesByHierarchy(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
+public async Task<List<string>> GetBlobNamesByHierarchy(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
+{
+    var retList = new List<string>();
+    var containerClient = GetContainerClient(containerName);
+
+    async Task GetBlobNamesRecursive(string? currentPrefix = null)
     {
-        if (string.IsNullOrWhiteSpace(containerName))
+        await foreach (BlobHierarchyItem blobItem in containerClient.GetBlobsByHierarchyAsync(prefix: currentPrefix, delimiter: PathDelimiter.ToString(), cancellationToken: cancellationToken))
         {
-            throw new ArgumentNullException($"{nameof(containerName)} is required", nameof(containerName));
-        }
-
-        var retList = new List<string>();
-        var containerClient = GetContainerClient(containerName);
-
-        async Task GetBlobNamesRecursive(string? currentPrefix = null)
-        {
-            await foreach (BlobHierarchyItem blobItem in containerClient.GetBlobsByHierarchyAsync(prefix: currentPrefix, delimiter: PathDelimiter.ToString(), cancellationToken: cancellationToken))
+            retList.Add(blobItem.IsPrefix ? blobItem.Prefix : blobItem.Blob.Name);
+            if (blobItem.IsPrefix)
             {
-                retList.Add(blobItem.IsPrefix ? blobItem.Prefix : blobItem.Blob.Name);
-                if (blobItem.IsPrefix)
-                {
-                    await GetBlobNamesRecursive(blobItem.Prefix);
-                }
+                await GetBlobNamesRecursive(blobItem.Prefix);
             }
         }
-
-        await GetBlobNamesRecursive(prefix);
-
-        return retList;
     }
+
+    await GetBlobNamesRecursive(prefix);
+
+    return retList;
+}
 
     public async Task<List<string>> GetFolderNames(string containerName, string? prefix = null, CancellationToken cancellationToken = default)
     {
