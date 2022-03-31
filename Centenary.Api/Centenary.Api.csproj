@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Centenary.Models\Centenary.Models.csproj" />
       <ProjectReference Include="..\Centenary.Storage\Centenary.Storage.csproj" />
     </ItemGroup>
 

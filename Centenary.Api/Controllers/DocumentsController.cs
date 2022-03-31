@@ -1,7 +1,7 @@
 ﻿using System.Net.Mime;
 using Centenary.Api.Models;
-using Centenary.Api.Models.DocTree;
 using Centenary.Api.Service;
+using Centenary.Models.DocTree;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 

@@ -1,4 +1,4 @@
-﻿namespace Centenary.Api.Models.DocTree;
+﻿namespace Centenary.Models.DocTree;
 
 /// <summary>
 /// Models a folder and document tree structure.

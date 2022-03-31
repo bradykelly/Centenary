@@ -1,6 +1,6 @@
 ﻿using Centenary.Api.Data;
 using Centenary.Api.Models;
-using Centenary.Api.Models.DocTree;
+using Centenary.Models.DocTree;
 using Centenary.Storage;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Api", "Centenary.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Razor", "Centenary.Razor\Centenary.Razor.csproj", "{71CD16F5-24A6-4458-BC58-87A126DB8F9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centenary.Models", "Centenary.Models\Centenary.Models.csproj", "{0B0A6B53-A375-421B-B8F3-EE85D88626A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{71CD16F5-24A6-4458-BC58-87A126DB8F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71CD16F5-24A6-4458-BC58-87A126DB8F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71CD16F5-24A6-4458-BC58-87A126DB8F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0A6B53-A375-421B-B8F3-EE85D88626A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0A6B53-A375-421B-B8F3-EE85D88626A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0A6B53-A375-421B-B8F3-EE85D88626A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0A6B53-A375-421B-B8F3-EE85D88626A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
