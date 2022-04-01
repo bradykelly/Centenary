@@ -1,0 +1,30 @@
+﻿@page
+@model DocumentListModel
+
+@* BKTODO Squeeze the full parent path in somewhere *@
+<section>
+    <h3>Folders available under the <strong>@Model.ParentName</strong> folder:</h3>
+    <ul>
+        @{
+            foreach (var folder in Model.DocumentList.Folders)
+            {
+                <li>
+                    <a asp-page="/DocumentList" asp-route-parentPath="@folder.FullPath">@folder.Name</a>
+                </li>
+            }
+        }
+    </ul>
+</section>
+<section>
+    <h3>Documents available under the <strong>@Model.ParentName</strong> folder:</h3>
+    <ul>
+        @{
+            foreach (var doc in Model.DocumentList.Documents)
+            {
+                <li>
+                    <a asp-page="/Document" asp-route-fullPath="@doc.FullPath">@doc.Name</a>
+                </li>
+            }
+        }
+    </ul>
+</section>
