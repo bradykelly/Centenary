@@ -6,9 +6,9 @@ function FolderList(props) {
         <section>
             <h3>Folders available under the {props.parentFolder || "/"} folder</h3>
             <ul>
-                {displayFolders.map(folder => (
+                {displayFolders.map((folder, i) => (
                     <li key={folder.fullPath}>
-                        <a href={`#${folder.id}`}>{folder.name}</a>
+                        <a href={`#${folder.fullPath}`}>{folder.name}</a>
                     </li>
                 ))}
             </ul>

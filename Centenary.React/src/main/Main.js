@@ -6,10 +6,10 @@ import folders from "../documents/test-data";
 
 function Main(props) {
     return (
-        <div>
+        <>
             <FolderList parentFolder={props.parentFolder} folders={folders}/>
             <DocumentList parentFolder={props.parentFolder}/>
-        </div>
+        </>
     );
 }
 
