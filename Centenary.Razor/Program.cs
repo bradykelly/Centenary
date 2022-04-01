@@ -1,10 +1,13 @@
 using Centenary.Razor;
+using Centenary.Razor.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
 builder.Services.AddHttpClient();
+builder.Services.Configure<ApiOptions>(builder.Configuration.GetSection("Api"));
 
 var app = builder.Build();
 

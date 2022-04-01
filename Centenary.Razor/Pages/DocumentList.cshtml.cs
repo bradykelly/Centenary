@@ -1,7 +1,9 @@
 ﻿using System.Text.Json;
 using Centenary.Models.DocTree;
+using Centenary.Razor.Config;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Options;
 using Microsoft.Net.Http.Headers;
 
 namespace Centenary.Razor.Pages;
@@ -9,10 +11,12 @@ namespace Centenary.Razor.Pages;
 public class DocumentListModel : PageModel
 {
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly ApiOptions _options;
 
-    public DocumentListModel(IHttpClientFactory httpClientFactory)
+    public DocumentListModel(IHttpClientFactory httpClientFactory, IOptions<ApiOptions> options)
     {
         _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     public DocumentList DocumentList { get; set; } = new DocumentList();
@@ -26,7 +30,7 @@ public class DocumentListModel : PageModel
     {
         var httpRequestMessage = new HttpRequestMessage(
             HttpMethod.Get,
-            $"{ApiStrings.BaseUrl}/documents/{parentPath}")
+            $"{_options.BaseUrl}/documents/{parentPath}")
         {
             Headers =
             {
