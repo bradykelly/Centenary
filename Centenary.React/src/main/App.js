@@ -1,18 +1,22 @@
 import React from "react";
-import Header from '../layout/Header.js';
-import Footer from '../layout/Footer.js';
-import sphinxSmile from "../img/sphinx-smile.png";
 import './App.css';
-import Main from "./Main";
+import { Routes, Route } from 'react-router-dom';
+import {Home, About, Events, Contact, NotFound, Services, CompanyHistory, Location } from "./pages";
 
 function App() {
-    let parent = "";
     return (
-        <div className="App">
-            <Header/>
-            <img src={sphinxSmile} alt="sphinx with a smile" height={100}/>
-            <Main parentFolder={parent}/>
-            <Footer year={new Date().getFullYear()}/>
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />}>
+                    <Route path="services" element={<Services />} />
+                    <Route path="history" element={<CompanyHistory />} />
+                    <Route path="location" element={<Location />} />     
+                </Route>
+                <Route path="/events" element={<Events />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </div>
     );
 }
